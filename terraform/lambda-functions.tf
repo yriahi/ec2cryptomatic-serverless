@@ -3,7 +3,7 @@
 data "archive_file" "layer_zip" {
   type        = "zip"
   source_dir  = "files/layer"
-  output_path = "layer.zip"
+  output_path = "${path.module}/dist/layer.zip"
 }
 
 data "archive_file" "archives_zip" {
@@ -21,7 +21,7 @@ data "archive_file" "archives_zip" {
 
   type        = "zip"
   source_file = each.value
-  output_path = "${split("/", each.value)[1]}.zip"
+  output_path = "${path.module}/dist/${split("/", each.value)[1]}.zip"
 }
 
 resource "aws_lambda_layer_version" "lambda_layer" {
