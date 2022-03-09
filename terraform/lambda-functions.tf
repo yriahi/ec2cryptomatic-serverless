@@ -32,7 +32,7 @@ resource "aws_lambda_layer_version" "lambda_layer" {
 }
 
 resource "aws_lambda_function" "take_snapshot" {
-  filename      = "ebs_take_snapshot.py.zip"
+  filename      = "${path.module}/dist/ebs_take_snapshot.py.zip"
   function_name = "EC2Cryptomatic_take_snapshot"
   layers        = [aws_lambda_layer_version.lambda_layer.arn]
   role          = aws_iam_role.iam_role_lambda.arn
@@ -43,7 +43,7 @@ resource "aws_lambda_function" "take_snapshot" {
 }
 
 resource "aws_lambda_function" "encrypt_snapshot" {
-  filename      = "ebs_encrypt_snapshot.py.zip"
+  filename      = "${path.module}/dist/ebs_encrypt_snapshot.py.zip"
   function_name = "EC2Cryptomatic_encrypt_snapshot"
   layers        = [aws_lambda_layer_version.lambda_layer.arn]
   role          = aws_iam_role.iam_role_lambda.arn
@@ -54,7 +54,7 @@ resource "aws_lambda_function" "encrypt_snapshot" {
 }
 
 resource "aws_lambda_function" "create_volume" {
-  filename      = "ebs_create_volume_from_snapshot.py.zip"
+  filename      = "${path.module}/dist/ebs_create_volume_from_snapshot.py.zip"
   function_name = "EC2Cryptomatic_create_volume"
   layers        = [aws_lambda_layer_version.lambda_layer.arn]
   role          = aws_iam_role.iam_role_lambda.arn
@@ -65,7 +65,7 @@ resource "aws_lambda_function" "create_volume" {
 }
 
 resource "aws_lambda_function" "swap_volumes" {
-  filename      = "ec2_swap_volumes.py.zip"
+  filename      = "${path.module}/dist/ec2_swap_volumes.py.zip"
   function_name = "EC2Cryptomatic_swap_volumes"
   layers        = [aws_lambda_layer_version.lambda_layer.arn]
   role          = aws_iam_role.iam_role_lambda.arn
@@ -76,7 +76,7 @@ resource "aws_lambda_function" "swap_volumes" {
 }
 
 resource "aws_lambda_function" "extract_volumes" {
-  filename      = "ec2_extract_volumes.py.zip"
+  filename      = "${path.module}/dist/ec2_extract_volumes.py.zip"
   function_name = "EC2Cryptomatic_extract_volumes"
   layers        = [aws_lambda_layer_version.lambda_layer.arn]
   role          = aws_iam_role.iam_role_lambda.arn
@@ -87,7 +87,7 @@ resource "aws_lambda_function" "extract_volumes" {
 }
 
 resource "aws_lambda_function" "cleanup_snapshot" {
-  filename      = "ebs_cleanup_snapshot.py.zip"
+  filename      = "${path.module}/dist/ebs_cleanup_snapshot.py.zip"
   function_name = "EC2Cryptomatic_cleanup"
   layers        = [aws_lambda_layer_version.lambda_layer.arn]
   role          = aws_iam_role.iam_role_lambda.arn
@@ -98,7 +98,7 @@ resource "aws_lambda_function" "cleanup_snapshot" {
 }
 
 resource "aws_lambda_function" "check_instance" {
-  filename      = "ec2_check_instance.py.zip"
+  filename      = "${path.module}/dist/ec2_check_instance.py.zip"
   function_name = "EC2Cryptomatic_check_instance"
   layers        = [aws_lambda_layer_version.lambda_layer.arn]
   role          = aws_iam_role.iam_role_lambda.arn
