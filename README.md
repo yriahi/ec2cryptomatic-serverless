@@ -8,14 +8,14 @@ If you need to encrypt large volumes please use the non-serverless version.
 
 ## Description
 
-This tool let you :
+This tool lets you :
 - Encrypt all the EBS volumes for an instance
 - Duplicate all the source tags to the target
 - Apply DeleteOnTermination flag if needs
 - Preserve the original volume or not as an option 
 - Start each instance after encrypting is complete
 
-For your information, the workflow used to encrypt a EBS volume is:
+For your information, the workflow used to encrypt an EBS volume is:
 - Take a snapshot from the original volume
 - Copy and encrypt that snapshot
 - Create a new volume from that encrypted snapshot
@@ -24,14 +24,14 @@ For your information, the workflow used to encrypt a EBS volume is:
 
 All logs will be sent to CloudWatch Logs.
 
-## How it works ?
+## How it works?
 
 This version of the ec2cryptomatic tool used Lambda functions and a Step 
 Functions machine for encrypting volumes.
 
  ![stepfunctions](state-machine.png)
 
-## How deploy it ?
+## How deploy it?
 
 This project embedded a Terraform template that let you deploy the state 
 machine into your AWS account.
@@ -45,7 +45,7 @@ terraform plan
 terraform apply
 ````
 
-## How to run the Step-Functions machine ?
+## How to run the Step-Functions machine?
 
 Go into your Step-functions console, click on EC2Cryptomatic-state-machine.
 Then click on "Start Execution":
