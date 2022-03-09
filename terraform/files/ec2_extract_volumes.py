@@ -35,9 +35,10 @@ def lambda_handler(event, context):
         # If the volume is already encrypted we skip it and delete it
         # from the volume list
         if device.id in volumes and device.encrypted:
-            msg = f'{instance_id} Volume {device.io} already encrypted'
+            device_id_index_position = volumes.index(device.id)
+            msg = f'{instance_id} Volume {device.id} already encrypted'
             LOGGER.warning(msg)
-            del volumes[device.id]
+            del volumes[device_id_index_position]
             continue
 
     return {**event,
