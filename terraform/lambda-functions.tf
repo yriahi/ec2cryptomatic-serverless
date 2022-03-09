@@ -2,20 +2,20 @@
 
 data "archive_file" "layer_zip" {
   type        = "zip"
-  source_dir  = "files/layer"
+  source_dir  = "src/layer"
   output_path = "${path.module}/dist/layer.zip"
 }
 
 data "archive_file" "archives_zip" {
   for_each = toset(
     [
-      "files/ebs_take_snapshot.py",
-      "files/ebs_encrypt_snapshot.py",
-      "files/ebs_create_volume_from_snapshot.py",
-      "files/ec2_swap_volumes.py",
-      "files/ec2_extract_volumes.py",
-      "files/ebs_cleanup_snapshot.py",
-      "files/ec2_check_instance.py"
+      "src/ebs_take_snapshot.py",
+      "src/ebs_encrypt_snapshot.py",
+      "src/ebs_create_volume_from_snapshot.py",
+      "src/ec2_swap_volumes.py",
+      "src/ec2_extract_volumes.py",
+      "src/ebs_cleanup_snapshot.py",
+      "src/ec2_check_instance.py"
     ]
   )
 
