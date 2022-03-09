@@ -1,7 +1,7 @@
 # EC2Cryptomatic (server-less version)
 
 Encrypt EBS volumes from AWS EC2 instances with a serverless StepFunctions machine.
-This project is a server-less version of the EC2Cryptomatic tool (http://www.github.com.jbrt/ec2cryptomatic).
+This project is a server-less version of the EC2Cryptomatic tool (http://www.github.com/jbrt/ec2cryptomatic).
 
 **Non-serverless version of EC2Cryptomatic can encrypt larger EBS volumes.** 
 If you need to encrypt large volumes please use the non-serverless version.
