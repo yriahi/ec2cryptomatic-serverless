@@ -25,7 +25,7 @@ data "archive_file" "archives_zip" {
 }
 
 resource "aws_lambda_layer_version" "lambda_layer" {
-  filename   = "layer.zip"
+  filename   = "${path.module}/dist/layer.zip"
   layer_name = "EC2Cryptomatic_BaseLibraryLayer"
 
   compatible_runtimes = ["python3.6", "python3.7"]
