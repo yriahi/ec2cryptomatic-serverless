@@ -1,6 +1,12 @@
 ## Changelog
 
 
+# 1.3.0
+
+- Rename `files` to `src`
+- Move zip files to `dist` folder.
+- Update `lambda-functions.tf` with `src` and `dist`.
+
 # 1.2.0
 
 - Upgrade providers.
